@@ -1,6 +1,6 @@
 # emonWiFi
 
-This small adapter allows [OpenEnergyMonitor](https://openenergymonitor.org) products to be used with a WiFi connection. The module is fully supported by [ESPHome](https://esphome.io/components/sensor/emontx/) and is compatible with many end points, for example [emonCMS](https://emoncms.org/), [Home Assistant](https://www.home-assistant.io/), and MQTT.
+This small adapter allows [OpenEnergyMonitor](https://openenergymonitor.org) products to be used with a WiFi connection. The module is fully supported by [ESPHome](https://esphome.io/components/sensor/emontx/) and is compatible with many endpoints, for example [emonCMS](https://emoncms.org/), [Home Assistant](https://www.home-assistant.io/), and MQTT.
 
 It is available for the following OpenEnergyMonitor products:
 
@@ -51,7 +51,7 @@ With the emonTx4's USB-C port facing downwards, insert the emonWiFi into the 6 p
 > [!NOTE]
 > If you want to configure the emonTx5 over the WiFi connection, you must cut the pad marked `USB_TX`. With this cut, you will not be able to configure the emonTx5 using the USB-C port. You can restore this functionality by applying a small solder bridge over the `USB_TX` pads.
 
-With the emonTx6's USB-C port to the right, insert the emonWiFi into the pins below the Raspberry Pi socket as far to the right as possible with the emonWiFi's USB-C port also to the right.
+With the emonTx5's USB-C port to the right, insert the emonWiFi into the pins below the Raspberry Pi socket as far to the right as possible with the emonWiFi's USB-C port also to the right.
 
 #### emonTx6
 
