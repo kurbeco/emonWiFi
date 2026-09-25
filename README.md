@@ -15,32 +15,6 @@ The adapter uses an [Espressif ESP32-C3](https://www.espressif.com/en/products/s
 
 ## Setup
 
-### Installing software
-
-To install firmware for the first time, hold down the push button on the emonWiFi while plugging in the USB-C cable. This puts the ESP32 module into bootloader mode which allows firmware to be uploaded over the USB connection. After the first upload, you can use OTA updates.
-
-The emonWiFi is [natively supported by ESPHome](https://esphome.io/components/sensor/emontx/). You can find instructions here or setup directly from Home Assistant.
-
-The ESPHome configuration snippet for the emonWiFi is:
-
-```yaml
-esphome:
-  name: emonwifi
-  friendly_name: emonWiFi
-
-esp32:
-  board: esp32-c3-devkitm-1
-  framework:
-    type: esp-idf
-
-uart:
-  id: emontx_uart # using UART2
-  rx_pin: GPIO20
-  tx_pin: GPIO21
-  baud_rate: 115200
-  rx_buffer_size: 2048
-```
-
 ### Installing the pin headers
 
 You need to fit the connectors that correspond to the device you are attaching it to. There are different headers for each of the boards listed above. The headers face downwards, away from the side with the USB-C socket.
@@ -82,3 +56,29 @@ With the emonTx6's USB-C port to the right, insert the emonWiFi into the pins be
 #### emonTx6
 
 With the emonTx6's USB-C port to the right, insert the emonWiFi into the 40pin socket towards the bottom as far to the right as possible with the emonWiFi's USB-C port also to the right.
+
+### Installing software
+
+To install firmware for the first time, hold down the push button on the emonWiFi while plugging in the USB-C cable. This puts the ESP32 module into bootloader mode which allows firmware to be uploaded over the USB connection. After the first upload, you can use OTA updates.
+
+The emonWiFi is [natively supported by ESPHome](https://esphome.io/components/sensor/emontx/). You can find instructions here or setup directly from Home Assistant.
+
+The ESPHome configuration snippet for the emonWiFi is:
+
+```yaml
+esphome:
+  name: emonwifi
+  friendly_name: emonWiFi
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
+uart:
+  id: emontx_uart # using UART2
+  rx_pin: GPIO20
+  tx_pin: GPIO21
+  baud_rate: 115200
+  rx_buffer_size: 2048
+```
