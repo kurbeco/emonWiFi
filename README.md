@@ -24,6 +24,15 @@ The emonWiFi is [natively supported by ESPHome](https://esphome.io/components/se
 The ESPHome configuration snippet for the emonWiFi is:
 
 ```yaml
+esphome:
+  name: emonwifi
+  friendly_name: emonWiFi
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
 uart:
   id: emontx_uart # using UART2
   rx_pin: GPIO20
