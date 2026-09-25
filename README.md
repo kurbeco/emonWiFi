@@ -59,9 +59,12 @@ With the emonTx6's USB-C port to the right, insert the emonWiFi into the 40pin s
 
 ### Installing software
 
+> [!WARNING]
+> You must not connect the USB-C port of the emonWiFi while the emonWiFi is plugged into an emonTx. Doing so can cause damage to your emonTx.
+
 To install firmware for the first time, hold down the push button on the emonWiFi while plugging in the USB-C cable. This puts the ESP32 module into bootloader mode which allows firmware to be uploaded over the USB connection. After the first upload, you can use OTA updates.
 
-The emonWiFi is [natively supported by ESPHome](https://esphome.io/components/sensor/emontx/). You can find instructions here or setup directly from Home Assistant.
+The emonWiFi is natively supported by ESPHome. See the ESPHome emonTx component [documentation](https://esphome.io/components/sensor/emontx/) for configuration details.
 
 The ESPHome configuration snippet for the emonWiFi is:
 
@@ -82,3 +85,25 @@ uart:
   baud_rate: 115200
   rx_buffer_size: 2048
 ```
+
+If you are new to ESPHome it is worth noting that there is no prebuilt firmware image to download and then configure as there is with frameworks like Tasmota. You define the firmware using an ESPHome YAML configuration, which is then compiled and installed on the device. The first installation is performed over USB; subsequent updates can be installed over Wi-Fi using OTA.
+
+#### ESPHome 
+
+To build the firmware for the emonWiFi you will need the [ESPHome Device Builder](https://github.com/esphome/device-builder). You can find in-depth instructions on how to install and use that [here](https://esphome.io/install/).
+
+You do not need to integrate the emonWiFi running ESPHome with any larger home automation system. The configuration for an emonWiFi connected to an emonTx is documented in the Home Assistant integration [documentation](https://github.com/FredM67/ha-emon-config#configuration).
+
+To configure the emonTx you will need to issue commands to it via the UART connection from the emonWiFi. Details of these commands are documented [here](https://github.com/openenergymonitor/emon32-fw/blob/main/docs/configuration.md#directly-via-serial), or you can send a `?` command and the emonTx will respond with the command list.
+
+They can be issued using the [emontx.send_command](https://esphome.io/components/sensor/emontx/#emontx-send_command-action) Action or via components like [Serial Proxy](https://esphome.io/components/serial_proxy/).
+
+#### Home Assistant
+
+To get data from your emonTx into Home Assistant you will need the [ESPHome Device Builder](https://github.com/esphome/device-builder) and the [ESPHome Home Assistant App](https://github.com/esphome/home-assistant-addon). Note that in earlier versions of Home Assistant that Apps were known as Add-ons and you may see that still in some documentation. 
+
+The Device Builder lets you set up the emonWiFi as an ESPHome device. The ESPHome integration allows the ESPHome device to communicate with Home Assistant.
+
+To be able to configure the emonTx via the emonWiFi within Home Assistant you will need [emonPi/Tx Configuration for Home Assistant](https://github.com/FredM67/ha-emon-config) and make additional ESPHome configuration changes to include the `emontx_ha_bridge` component.
+
+There are detailed instructions on how to set all this up in the project's [README.md](https://github.com/FredM67/ha-emon-config#requirements)
