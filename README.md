@@ -88,6 +88,24 @@ uart:
 
 If you are new to ESPHome it is worth noting that there is no prebuilt firmware image to download and then configure as there is with frameworks like Tasmota. You define the firmware using an ESPHome YAML configuration, which is then compiled and installed on the device. The first installation is performed over USB; subsequent updates can be installed over Wi-Fi using OTA.
 
+The YAML file that defines the ESPHome Device is where each of the [sensors](https://esphome.io/components/sensor/emontx/) is declared. The `tag_name` attribute maps to the channels reported on the emonTx.
+An [example sensor definition](https://esphome.io/components/sensor/emontx/#quick-start) would look like:
+
+```yaml
+emontx:
+
+sensor:
+  - platform: emontx
+    tag_name: "V1"  # Use "V1"-"V3" for multi-phase; see Sensor Indexing for "Vrms" (single-phase)
+    name: "Voltage"
+  - platform: emontx
+    tag_name: "P1"
+    name: "Power CT1"
+  - platform: emontx
+    tag_name: "E1"
+    name: "Energy CT1"
+```
+
 #### ESPHome 
 
 To build the firmware for the emonWiFi you will need the [ESPHome Device Builder](https://github.com/esphome/device-builder). You can find in-depth instructions on how to install and use that [here](https://esphome.io/install/).
