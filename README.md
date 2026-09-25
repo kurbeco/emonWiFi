@@ -13,7 +13,7 @@ The adapter uses an [Espressif ESP32-C3](https://www.espressif.com/en/products/s
 > [!WARNING]
 > You must not connect the USB-C port of the emonWiFi while the emonWiFi is plugged into an emonTx. Doing so can cause damage to your emonTx.
 
-## Setup
+## Hardware Setup
 
 ### Installing the pin headers
 
@@ -57,7 +57,7 @@ With the emonTx6's USB-C port to the right, insert the emonWiFi into the pins be
 
 With the emonTx6's USB-C port to the right, insert the emonWiFi into the 40pin socket towards the bottom as far to the right as possible with the emonWiFi's USB-C port also to the right.
 
-### Installing software
+## Software Setup
 
 > [!WARNING]
 > You must not connect the USB-C port of the emonWiFi while the emonWiFi is plugged into an emonTx. Doing so can cause damage to your emonTx.
@@ -106,7 +106,7 @@ sensor:
     name: "Energy CT1"
 ```
 
-#### ESPHome 
+### ESPHome
 
 To build the firmware for the emonWiFi you will need the [ESPHome Device Builder](https://github.com/esphome/device-builder). You can find in-depth instructions on how to install and use that [here](https://esphome.io/install/).
 
@@ -116,7 +116,7 @@ To configure the emonTx you will need to issue commands to it via the UART conne
 
 They can be issued using the [emontx.send_command](https://esphome.io/components/sensor/emontx/#emontx-send_command-action) Action or via components like [Serial Proxy](https://esphome.io/components/serial_proxy/).
 
-#### Home Assistant
+### Home Assistant
 
 To get data from your emonTx into Home Assistant you will need the [ESPHome Device Builder](https://github.com/esphome/device-builder) and the [ESPHome Home Assistant App](https://github.com/esphome/home-assistant-addon). Note that in earlier versions of Home Assistant that Apps were known as Add-ons and you may see that still in some documentation. 
 
