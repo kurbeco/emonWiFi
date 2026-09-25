@@ -34,10 +34,10 @@ For an emonTx4, a 6 position **socket** is installed in the position marked **Tx
 ### Installing the emonWiFi
 
 > [!WARNING]
-> You must remove power from the emonTx before installing the emonWiFi. Failure to do so can result in damage to either, or both, of the devices.
+> You must remove power from the emonTx before installing the emonWiFi. Failure to do so can result in damage to either or both of the devices.
 
 > [!WARNING]
-> Ensure you have placed the emonWiFi into the correct position for your emonTx before applying power. Failure to do can result in damage to either, or both, of the devices.
+> Ensure you have placed the emonWiFi into the correct position for your emonTx before applying power. Failure to do so can result in damage to either or both of the devices.
 
 #### emonTx4
 
